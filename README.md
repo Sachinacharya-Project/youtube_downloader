@@ -1,12 +1,12 @@
 # YOUTUBE VIDEO DOWNLOADER
 ## Download Module 
-=> Pytube
+Pytube
 ```` 
-==> pip install pytube
+pip install pytube
 ````
 ## FEATURES:
-*Download YouTube Videos*
-*Download YouTube Video-Single*
-*Download YouTube Video-Single As Audio Format*
-*Download YouTube Video-PlayList*
-*Download YouTube Video-PlayList as Audios*
+*Download YouTube Videos\n*
+*Download YouTube Video-Single\n*
+*Download YouTube Video-Single As Audio Format\n*
+*Download YouTube Video-PlayList\n*
+*Download YouTube Video-PlayList as Audios\n*
