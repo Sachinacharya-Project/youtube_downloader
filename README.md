@@ -5,8 +5,8 @@ Pytube
 pip install pytube
 ````
 ## FEATURES:
-*Download YouTube Videos\n*
-*Download YouTube Video-Single\n*
-*Download YouTube Video-Single As Audio Format\n*
-*Download YouTube Video-PlayList\n*
-*Download YouTube Video-PlayList as Audios\n*
+1. Download YouTube Videos
+2. Download YouTube Video-Single
+3. Download YouTube Video-Single As Audio Format
+4. Download YouTube Video-PlayList
+5. Download YouTube Video-PlayList as Audios
