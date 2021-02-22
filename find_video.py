@@ -29,6 +29,12 @@ def play(topic):
         raise Exception("No Video Found with that name")
     return "https://www.youtube.com"+lst[count-5]
 def checkExistence(file):
+    "Don't Use this, throws error"
+    unwanted = ['/', '\\', '*', ':', '?', '"', '<', '>', '|', '#']
+    file = str(file)+str(".mp3")
+    for item in unwanted:
+        if item in file:
+            file = file.replace(item, '')
     return os.path.exists(os.path.join(username, 'Music', f'{file}.mp3'))
 def rename(direc):
     direc = direc.replace('/', '\\')
