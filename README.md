@@ -16,7 +16,6 @@ pip install -r requirements.txt
 ````
 ## Usermanual
 1. Run Main.py
-2. Enter 'P' if you wanna download whole playlist | 'S' for single file
-3. Enter URL of you video or videos (YouTube Video URL)
+3. Enter URL of you video or videos (YouTube Video URL) or Name
 4. Enter 'A' if you wanna download as Audio | 'V' if you wanna download Video
 5. Once you see prompt "Download is Completed Successfully", Check out "/Path/Users/[username]/Music" for Audio and "/Path/Users/[username]/Videos" for videos 

@@ -28,6 +28,8 @@ def play(topic):
     if lst[count-5] == "/results":
         raise Exception("No Video Found with that name")
     return "https://www.youtube.com"+lst[count-5]
+def checkExistence(file):
+    return os.path.exists(os.path.join(username, 'Music', f'{file}.mp3'))
 def rename(direc):
     direc = direc.replace('/', '\\')
     source = direc
@@ -38,22 +40,23 @@ def rename(direc):
     except FileExistsError:
         print("\nFile Already Exist")
     comp()
-def download(topic, asking):
+def download(topic, asking, **kargs):
+    number = kargs.get('index', '1')
     url = play(topic)
     ytd = YouTube(url, on_progress_callback=on_progress)
+    title = ytd.title
     if asking == 'a':
-        title = ytd.title
-        if os.path.exists(os.path.join(os.path.join(username, 'Music'), f"{title}.mp3")):
+        if checkExistence(title) == True:
             print("Audio Already Exist with Name {}.mp3".format(title))
         else:
-            print("Downloading Audio {}.mp3".format(title))
+            print("{}: Downloading Audio {}.mp3".format(number, title))
             try:
                 cb = ytd.streams.get_audio_only().download(f"{username}/Music")
             except ConnectionResetError:
                 print("Audio cannot be downloaded=> Connection has been reset")
             ytd.register_on_complete_callback(rename(cb))
     elif asking == 'v':
-        print("Downloading Video {}.mp4".format(ytd.title))
+        print("{}: Downloading Video {}.mp4".format(number ,title))
         try:
             ytd.streams.get_highest_resolution().download(f"{username}/Videos")
             ytd.register_on_complete_callback(comp())
@@ -61,4 +64,4 @@ def download(topic, asking):
             print("Video cannot be downloaded=>Connection reset")
     else:
         print("Invalid Argument")
-    print("Download is Completed Successfully")
+    return "Download is Completed Successfully"
