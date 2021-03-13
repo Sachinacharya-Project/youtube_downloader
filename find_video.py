@@ -47,6 +47,8 @@ def rename(direc):
         print("\nFile Already Exist")
     comp()
 def download(topic, asking, **kargs):
+    """Download one video at a time
+    """
     number = kargs.get('index', '1')
     url = play(topic)
     ytd = YouTube(url, on_progress_callback=on_progress)
@@ -70,4 +72,4 @@ def download(topic, asking, **kargs):
             print("Video cannot be downloaded=>Connection reset")
     else:
         print("Invalid Argument")
-    return "Download is Completed Successfully"
+    return "{} is Downloaded Successfully".format(title)
